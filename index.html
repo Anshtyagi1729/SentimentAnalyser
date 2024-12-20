@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SentiSense - Sentiment Analyzer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sentiment-card">
+            <div class="header">
+                <h1>SentiSense</h1>
+                <p>Understand the emotional tone of your text</p>
+            </div>
+
+            <div class="input-section">
+                <textarea 
+                    id="textInput" 
+                    rows="4" 
+                    placeholder="Enter your text here..."
+                ></textarea>
+                <div class="input-stats">
+                    <span id="charCount">0 / 500</span>
+                </div>
+            </div>
+
+            <button id="analyzeBtn" class="analyze-btn">
+                <i class="fas fa-brain"></i> Analyze Sentiment
+            </button>
+
+            <div id="resultContainer" class="result-container hidden">
+                <div class="result-header">
+                    <i id="sentimentIcon" class="fas"></i>
+                    <h2 id="sentimentResult"></h2>
+                </div>
+                <div class="result-details">
+                    <div class="confidence-bar">
+                        <div id="confidenceIndicator" class="confidence-fill"></div>
+                    </div>
+                    <p id="confidenceText"></p>
+                </div>
+                <div class="additional-insights">
+                    <p id="additionalFeedback"></p>
+                </div>
+            </div>
+
+            <div class="example-section">
+                <h3>Try Some Examples:</h3>
+                <div class="example-buttons">
+                    <button class="example-btn">I love this product!</button>
+                    <button class="example-btn">This is terrible.</button>
+                    <button class="example-btn">Neutral statement here.</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="loader" class="loader hidden">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
